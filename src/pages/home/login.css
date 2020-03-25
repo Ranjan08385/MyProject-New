@@ -1,0 +1,22 @@
+@media (max-width: 767px) {
+}
+
+@media (max-width: 360px) {
+  .loginSignupCard {
+    align-self: center !important;
+  }
+}
+
+.tabSelected:hover {
+  color: #182340;
+}
+
+.loginSignupCard {
+  align-self: flex-end;
+}
+
+.input {
+  outline: none;
+  -moz-appearance: textfield;
+  -webkit-appearance: none;
+}
