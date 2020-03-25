@@ -74,6 +74,8 @@ export default StyleSheet.create({
   },
   imgSec: {
     width: '30%',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   facilityName: {
     width: '70%',
@@ -122,5 +124,80 @@ export default StyleSheet.create({
   favIconImage: {
     width: 30,
     height: 30,
+  },
+  SectionView: {
+    width: '100%',
+    // borderWidth: 1,
+    // backgroundColor: 'red',
+  },
+  facilityImage: {
+    width: '100%',
+    marginTop: 0,
+  },
+  facilityImage_LAPTOP: {
+    width: '100%',
+    marginTop: 5,
+  },
+  hospitalDashboardImg: {
+    width: '100%',
+    height: 300,
+  },
+  facilityOptions: {
+    marginTop: -40,
+    backgroundColor: '#fff',
+    width: '90%',
+    flexDirection: 'row',
+    alignSelf: 'center',
+    padding: 20,
+    borderRadius: 20,
+    shadowColor: '#a8a8a8',
+    shadowOpacity: 0.5,
+    shadowRadius: 10,
+    elevation: 10,
+    shadowOffset: {
+      width: 0,
+      height: 1,
+    },
+  },
+  facilityOptions_LAPTOP: {
+    marginTop: -40,
+    backgroundColor: '#fff',
+    width: '50%',
+    flexDirection: 'row',
+    alignSelf: 'center',
+    padding: 20,
+    borderRadius: 20,
+    shadowColor: '#a8a8a8',
+    shadowOpacity: 0.5,
+    shadowRadius: 10,
+    elevation: 10,
+    shadowOffset: {
+      width: 0,
+      height: 1,
+    },
+  },
+  optionImgSec: {
+    width: '25%',
+    alignItems: 'center',
+  },
+  optionImgStyleSec: {
+    width: 50,
+    height: 50,
+  },
+  mainPageView: {
+    width: '100%',
+    height: '100%',
+    backgroundColor: '#fff',
+    position: 'absolute',
+  },
+  hospitalHead: {
+    position: 'absolute',
+    marginTop: 200,
+    marginLeft: 50,
+  },
+  facName: {
+    color: '#fff',
+    fontSize: 28,
+    fontWeight: 'bold',
   }
 })

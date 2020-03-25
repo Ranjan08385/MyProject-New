@@ -62,6 +62,11 @@ class Facility extends Component {
     });
   };
 
+  onClickFacilityTab = value => {
+    const { navigation } = this.props;
+    navigation.navigate('FacilityView');
+  }
+
   render() {
     const { facilityArray } = this.state;
     const { measure, navigation } = this.props;
@@ -79,6 +84,7 @@ class Facility extends Component {
                   Styles.facilityList,
                   Styles[getResponsiveStyle('facilityList', styleWidth)],
                 ]}
+                onPress={() => this.onClickFacilityTab(value)}
               >
                 <View>
                   <View style={Styles.favIcon}>

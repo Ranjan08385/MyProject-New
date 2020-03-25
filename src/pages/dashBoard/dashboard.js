@@ -30,7 +30,7 @@ class DashBoard extends Component {
   constructor(props) {
     super(props);
     const { navigation } = this.props;
-    navigation.navigate('Facility');
+    // navigation.navigate('Facility');
     this.state = {
       menuArray: [
         {

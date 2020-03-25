@@ -64,7 +64,7 @@ class LandingPage extends Component {
         username,
         password,
       };
-      navigation.navigate('DashBoard');
+      navigation.navigate('Facility');
       // makeAPICall(GetLoginService(data), res => this.onSuceessLogin(res), err => this.onErrorLogin(err));
     }
   };

@@ -24,6 +24,7 @@ import Facility from './pages/facility/facility';
 import Provider from './pages/provider/provider';
 import ManageUser from './pages/manageUser/manageUser';
 import Conflicts from './pages/resolveConflicts/resolveConflicts';
+import FacilityView from './pages/facility/facilityView';
 import {
   PREF_CURRENCY_CON,
   removePrefData,
@@ -453,6 +454,7 @@ const signedInStack = createStackNavigator(
     },
     homeBottomNavigator,
     DashBoard,
+    FacilityView,
   },
 
   {
