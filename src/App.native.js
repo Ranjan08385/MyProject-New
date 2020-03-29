@@ -333,13 +333,13 @@ const homeBottomNavigator = createBottomTabNavigator(
         const { routeName } = navigation.state;
         let iconName;
         if (routeName === 'Facility') {
-          iconName = 'pay-money';
+          iconName = 'heart';
         } else if (routeName === 'Provider') {
-          iconName = 'wallet';
+          iconName = 'user';
         } else if (routeName === 'ManageUser') {
-          iconName = 'online-pay';
+          iconName = 'people';
         } else if (routeName === 'Conflicts') {
-          iconName = 'setting';
+          iconName = 'warning';
         }
         return <Icon name={iconName} size={23} color={tintColor} />;
       },

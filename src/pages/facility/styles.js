@@ -23,6 +23,18 @@ export default StyleSheet.create({
     marginTop: '7%',
     marginLeft: '20%',
   },
+  headTag: {
+    marginTop: 30,
+    marginLeft: 30,
+  },
+  headTag_LAPTOP: {
+    marginTop: 50,
+    marginLeft: 60,
+  },
+  headTagStyle: {
+    fontSize: 22,
+    fontWeight: 'bold',
+  },
   cardView: {
     flexDirection: 'column',
     margin: '7%',
@@ -50,7 +62,7 @@ export default StyleSheet.create({
   },
   facilityList_LAPTOP: {
     backgroundColor: '#fff',
-    width: '25%',
+    width: '28%',
     // height: '25%',
     marginTop: '0%',
     marginLeft: '5%',
@@ -88,8 +100,8 @@ export default StyleSheet.create({
     padding: 5,
   },
   imgStyle: {
-    width: 60,
-    height: 50,
+    width: 70,
+    height: 60,
     borderRadius: 5,
   },
   hospitalName: {
@@ -208,7 +220,7 @@ export default StyleSheet.create({
   hospitalHead: {
     width: '100%',
     position: 'absolute',
-    marginTop: 180,
+    marginTop: 170,
     alignItems: 'center',
   },
   hospitalHead_LAPTOP: {
@@ -261,5 +273,86 @@ export default StyleSheet.create({
   partTwoText: {
     color: '#5d5e5e',
     fontSize: 16,
+  },
+  addFacility: {
+    position: 'absolute',
+    width: '100%',
+    marginTop: 700,
+    alignItems: 'flex-end',
+    // borderWidth: 1,
+  },
+  addFacility_LAPTOP: {
+    position: 'absolute',
+    width: '100%',
+    marginTop: 450,
+    alignItems: 'flex-end',
+    // borderWidth: 1,
+  },
+  addFacilityBtn: {
+    marginRight: 40,
+  },
+  addFacilityImg: {
+    width: 50,
+    height: 50,
+  },
+  excelAndSort: {
+    flexDirection: 'row',
+    width: '100%',
+    marginTop: 20,
+    paddingLeft: 30,
+  },
+  excelAndSort_LAPTOP: {
+    paddingLeft: 60,
+  },
+  excelSheet: {
+    flex: 1,
+  },
+  excelImg: {
+    width: 25,
+    height: 25,
+  },
+  excelImg_LAPTOP: {
+    width: 35,
+    height: 35,
+  },
+  excelText: {
+    marginLeft: 10,
+    fontSize: 16,
+    color: '#706e6e',
+  },
+  sortOrFilter: {
+    flex: 1,
+  },
+  sortText: {
+    marginRight: 10,
+    fontSize: 16,
+    color: '#706e6e',
+  },
+  sortImg: {
+    width: 25,
+    height: 25,
+    marginRight: 30,
+  },
+  sortImg_LAPTOP: {
+    width: 25,
+    height: 25,
+    marginRight: 40,
+  },
+  clickExcel: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginRight: '0%',
+  },
+  clickExcel_LAPTOP: {
+    marginRight: '70%',
+  },
+  clickFilter: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'flex-end',
+    marginLeft: '0%',
+  },
+  clickFilter_LAPTOP: {
+    marginLeft: '60%',
   },
 })

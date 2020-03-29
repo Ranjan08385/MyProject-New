@@ -19,6 +19,9 @@ const direction = require('../images/direction.png');
 const share = require('../images/share-v.png');
 const favourite = require('../images/heart-filled.png');
 const nonFavourite = require('../images/heart-blank.png');
+const addFacility = require('../images/addmark.png');
+const excelSheet = require('../images/excel.png');
+const filter = require('../images/filter.png');
 
 class Facility extends Component {
   static contextType = AppConsumer;
@@ -74,9 +77,27 @@ class Facility extends Component {
     console.log('styleWidth', styleWidth);
     return (
       <View style={Styles.mainPage}>
+        <View style={Styles.headerFixed}>
         {Platform.OS === 'web' ? <Dashboard navigation={navigation} measure={measure} /> : null}
-
+        </View>
         <View style={[Styles.container, Styles[getResponsiveStyle('container', styleWidth)]]}>
+          <View style={[Styles.headTag, Styles[getResponsiveStyle('headTag', styleWidth)]]}>
+            <CustomText style={Styles.headTagStyle}>FACILITY</CustomText>
+          </View>
+          <View style={[Styles.excelAndSort, Styles[getResponsiveStyle('excelAndSort', styleWidth)]]}>
+            <View style={Styles.excelSheet}>
+              <TouchableOpacity style={[Styles.clickExcel, Styles[getResponsiveStyle('clickExcel', styleWidth)]]}>
+                <Image source={excelSheet} style={[Styles.excelImg, Styles[getResponsiveStyle('excelImg', styleWidth)]]} />
+                <CustomText style={Styles.excelText}>Export Facility</CustomText>
+              </TouchableOpacity>
+            </View>
+            <View style={Styles.sortOrFilter}>
+              <TouchableOpacity style={[Styles.clickFilter, Styles[getResponsiveStyle('clickFilter', styleWidth)]]}>
+                <CustomText style={Styles.sortText}>Sort / Filter By</CustomText>
+                <Image source={filter} style={[Styles.sortImg, Styles[getResponsiveStyle('sortImg', styleWidth)]]} />
+              </TouchableOpacity>
+            </View>
+          </View>
           <View style={[Styles.cardView, Styles[getResponsiveStyle('cardView', styleWidth)]]}>
             {facilityArray.map(value => (
               <TouchableOpacity
@@ -130,6 +151,11 @@ class Facility extends Component {
                 </View>
               </TouchableOpacity>
             ))}
+          </View>
+          <View style={[Styles.addFacility, Styles[getResponsiveStyle('addFacility', styleWidth)]]}>
+            <TouchableOpacity style={Styles.addFacilityBtn}>
+              <Image source={addFacility} style={Styles.addFacilityImg} />
+            </TouchableOpacity>
           </View>
         </View>
       </View>
