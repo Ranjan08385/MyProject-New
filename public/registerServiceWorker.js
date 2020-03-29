@@ -5,7 +5,7 @@ self.addEventListener('install', function(event) {
       // cache.add('/');
       // cache.add('/index.html');
       // cache.add('/src/js/app.js');
-      cache.addAll(['/', 'icici.png', '/index.html', '/index.js']);
+      cache.addAll(['/', '', '/index.html', '/index.js']);
     })
   );
 });

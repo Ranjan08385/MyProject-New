@@ -26,40 +26,17 @@ const direction = require('../images/direction.png');
 const share = require('../images/share-v.png');
 const favourite = require('../images/heart-filled.png');
 const nonFavourite = require('../images/heart-blank.png');
+let data = [];
 
 class FacilityView extends Component {
   static contextType = AppConsumer;
 
   constructor(props) {
     super(props);
+    const { navigation } = this.props;
+    data = navigation.getParam('value');
     this.state = {
-      facilityArray: [
-        {
-          facilityImage: hospital1,
-          facilityName: 'Ranjan Hospital',
-          facilityType: 'Eye Speciality',
-          favourite: true,
-        },
-        {
-          facilityImage: hospital2,
-          facilityName: 'Jayadeva',
-          facilityType: 'Multi Speciality',
-          favourite: false,
-        },
-        {
-          facilityImage: hospital3,
-          facilityName: 'Narayana',
-          facilityType: 'Heart Speciality',
-          favourite: false,
-        },
-        // {
-        //   facilityImage: hospital3,
-        //   facilityName: 'Narayana',
-        //   facilityType: 'Heart Speciality',
-        //   favourite: false,
-        // }
-      ],
-      favIcon: false,
+      
     };
   }
 
@@ -71,43 +48,129 @@ class FacilityView extends Component {
 
 
   render() {
-    const { facilityArray } = this.state;
+    // const { facilityArray } = this.state;
     const { measure, navigation } = this.props;
     const styleWidth = measure;
     console.log('styleWidth', styleWidth);
     return (
       <View style={Styles.mainPageView}>
+        <View style={Styles.headerFixed}>
           {Platform.OS === 'web' ? <Dashboard navigation={navigation} measure={measure} /> : null}
-
+        </View>
         <View style={[Styles.container, Styles[getResponsiveStyle('container', styleWidth)]]}>
           <View style={Styles.SectionView}>
             <View style={[Styles.facilityImage, Styles[getResponsiveStyle('facilityImage', styleWidth)]]}>
-              <Image source={hospital1} style={Styles.hospitalDashboardImg} />
+              <Image source={data.facilityImage} style={Styles.overlay} blurRadius={3} />
             </View>
             <View style={[Styles.facilityOptions, Styles[getResponsiveStyle('facilityOptions', styleWidth)]]}>
               <View style={Styles.optionImgSec}>
                 <TouchableOpacity>
-                  <Image source={call} style={Styles.optionImgStyleSec} />
+                  <Image source={call} style={[Styles.optionImgStyleSec, Styles[getResponsiveStyle('optionImgStyleSec', styleWidth)]]} />
                 </TouchableOpacity>
               </View>
               <View style={Styles.optionImgSec}>
                 <TouchableOpacity>
-                  <Image source={mail} style={Styles.optionImgStyleSec} />
+                  <Image source={mail} style={[Styles.optionImgStyleSec, Styles[getResponsiveStyle('optionImgStyleSec', styleWidth)]]} />
                 </TouchableOpacity>
               </View>
               <View style={Styles.optionImgSec}>
                 <TouchableOpacity>
-                  <Image source={direction} style={Styles.optionImgStyleSec} />
+                  <Image source={direction} style={[Styles.optionImgStyleSec, Styles[getResponsiveStyle('optionImgStyleSec', styleWidth)]]} />
                 </TouchableOpacity>
               </View>
               <View style={Styles.optionImgSec}>
                 <TouchableOpacity>
-                  <Image source={share} style={Styles.optionImgStyleSec} />
+                  <Image source={share} style={[Styles.optionImgStyleSec, Styles[getResponsiveStyle('optionImgStyleSec', styleWidth)]]} />
                 </TouchableOpacity>
               </View>
             </View>
-            <View style={Styles.hospitalHead}>
-              <CustomText style={Styles.facName}>Ranjan Hospital</CustomText>
+            <View style={[Styles.hospitalHead, Styles[getResponsiveStyle('hospitalHead', styleWidth)]]}>
+              <CustomText style={Styles.facName}>{data.facilityName}</CustomText>
+              <CustomText style={Styles.facTypeName}>{data.facilityType}</CustomText>
+            </View>
+          </View>
+          <View style={[Styles.detailsView, Styles[getResponsiveStyle('detailsView', styleWidth)]]}>
+            <View style={Styles.detailSec}>
+              <View style={Styles.partOne}>
+                <CustomText style={Styles.partOneText}>1. Name </CustomText>
+                <CustomText style={Styles.separator}> : </CustomText>
+              </View>
+              <View style={Styles.partTwo}>
+                <CustomText style={Styles.partTwoText}>{data.facilityName}</CustomText>
+              </View>
+            </View>
+            <View style={Styles.detailSec}>
+              <View style={Styles.partOne}>
+                <CustomText style={Styles.partOneText}>2. Type </CustomText>
+                <CustomText style={Styles.separator}> : </CustomText>
+              </View>
+              <View style={Styles.partTwo}>
+                <CustomText style={Styles.partTwoText}>{data.facilityType}</CustomText>
+              </View>
+            </View>
+            <View style={Styles.detailSec}>
+              <View style={Styles.partOne}>
+                <CustomText style={Styles.partOneText}>3. Address </CustomText>
+                <CustomText style={Styles.separator}> : </CustomText>
+              </View>
+              <View style={Styles.partTwo}>
+                <CustomText style={Styles.partTwoText}>2nd cross, 9th main</CustomText>
+              </View>
+            </View>
+            <View style={Styles.detailSec}>
+              <View style={Styles.partOne}>
+                <CustomText style={Styles.partOneText}>4. City </CustomText>
+                <CustomText style={Styles.separator}> : </CustomText>
+              </View>
+              <View style={Styles.partTwo}>
+                <CustomText style={Styles.partTwoText}>Bangalore</CustomText>
+              </View>
+            </View>
+            <View style={Styles.detailSec}>
+              <View style={Styles.partOne}>
+                <CustomText style={Styles.partOneText}>5. State </CustomText>
+                <CustomText style={Styles.separator}> : </CustomText>
+              </View>
+              <View style={Styles.partTwo}>
+                <CustomText style={Styles.partTwoText}>Karnataka</CustomText>
+              </View>
+            </View>
+            <View style={Styles.detailSec}>
+              <View style={Styles.partOne}>
+                <CustomText style={Styles.partOneText}>6. Zip Code </CustomText>
+                <CustomText style={Styles.separator}> : </CustomText>
+              </View>
+              <View style={Styles.partTwo}>
+                <CustomText style={Styles.partTwoText}>560076</CustomText>
+              </View>
+            </View>
+            <View style={Styles.detailSec}>
+              <View style={Styles.partOne}>
+                <CustomText style={Styles.partOneText}>8. Email </CustomText>
+                <CustomText style={Styles.separator}> : </CustomText>
+              </View>
+              <View style={Styles.partTwo}>
+                <CustomText style={Styles.partTwoText}>ranjan@hospital.com</CustomText>
+              </View>
+            </View>
+            <View style={Styles.detailSec}>
+              <View style={Styles.partOne}>
+                <CustomText style={Styles.partOneText}>8. Contact No </CustomText>
+                <CustomText style={Styles.separator}> : </CustomText>
+              </View>
+              <View style={Styles.partTwo}>
+                <CustomText style={Styles.partTwoText}>+91 9513109508</CustomText>
+              </View>
+            </View>
+            <View style={Styles.detailSec}>
+              <View style={Styles.partOne}>
+                <CustomText style={Styles.partOneText}>9. Which type of facility best describes this
+                      site­­­­?(medical group, IPA, clinic or FQHC) </CustomText>
+                <CustomText style={Styles.separator}> : </CustomText>
+              </View>
+              <View style={Styles.partTwo}>
+                <CustomText style={Styles.partTwoText}>Clinic</CustomText>
+              </View>
             </View>
           </View>
         </View>

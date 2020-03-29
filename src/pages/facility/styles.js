@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Platform } from 'react-native';
 
 export default StyleSheet.create({
   mainPage: {
@@ -6,6 +6,11 @@ export default StyleSheet.create({
     height: '100%',
     backgroundColor: '#eef0ed',
     position: 'absolute',
+  },
+  headerFixed: {
+    position: Platform.OS === 'web' ? 'sticky' : 'absolute',
+    top: 0,
+    zIndex: 1,
   },
   container: {
     width: '100%',
@@ -80,7 +85,7 @@ export default StyleSheet.create({
   facilityName: {
     width: '70%',
     marginLeft: 10,
-    padding: 5, 
+    padding: 5,
   },
   imgStyle: {
     width: 60,
@@ -142,10 +147,16 @@ export default StyleSheet.create({
     width: '100%',
     height: 300,
   },
+  overlay: {
+    // ...StyleSheet.absoluteFillObject,
+    backgroundColor: 'rgba(0,0,0,0.5)',
+    width: '100%',
+    height: 300,
+  },
   facilityOptions: {
     marginTop: -40,
     backgroundColor: '#fff',
-    width: '90%',
+    width: '80%',
     flexDirection: 'row',
     alignSelf: 'center',
     padding: 20,
@@ -181,6 +192,10 @@ export default StyleSheet.create({
     alignItems: 'center',
   },
   optionImgStyleSec: {
+    width: 25,
+    height: 25,
+  },
+  optionImgStyleSec_LAPTOP: {
     width: 50,
     height: 50,
   },
@@ -191,13 +206,60 @@ export default StyleSheet.create({
     position: 'absolute',
   },
   hospitalHead: {
+    width: '100%',
+    position: 'absolute',
+    marginTop: 180,
+    alignItems: 'center',
+  },
+  hospitalHead_LAPTOP: {
+    alignItems: 'baseline',
     position: 'absolute',
     marginTop: 200,
-    marginLeft: 50,
+    marginLeft: 60,
   },
   facName: {
     color: '#fff',
     fontSize: 28,
     fontWeight: 'bold',
-  }
+  },
+  facTypeName: {
+    marginTop: 10,
+    color: '#fff',
+    fontSize: 20,
+    // fontWeight: 'bold',
+  },
+  detailsView: {
+    width: '100%',
+    margin: 20,
+    padding: 5,
+  },
+  detailsView_LAPTOP: {
+    width: '70%',
+    margin: 50,
+    padding: 20,
+  },
+  detailSec: {
+    flexDirection: 'row',
+    marginBottom: 20,
+  },
+  partOne: {
+    flex: 1,
+    flexDirection: 'row',
+  },
+  partOneText: {
+    width: '90%',
+    fontSize: 16,
+    fontWeight: 'bold',
+  },
+  separator: {
+    width: '10%',
+    fontSize: 16,
+  },
+  partTwo: {
+    flex: 1,
+  },
+  partTwoText: {
+    color: '#5d5e5e',
+    fontSize: 16,
+  },
 })

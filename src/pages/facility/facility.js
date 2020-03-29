@@ -64,7 +64,7 @@ class Facility extends Component {
 
   onClickFacilityTab = value => {
     const { navigation } = this.props;
-    navigation.navigate('FacilityView');
+    navigation.navigate('FacilityView', {value});
   }
 
   render() {
