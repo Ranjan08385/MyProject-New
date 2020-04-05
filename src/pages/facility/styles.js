@@ -355,4 +355,60 @@ export default StyleSheet.create({
   clickFilter_LAPTOP: {
     marginLeft: '60%',
   },
+  addNewFac: {
+    margin: 35,
+  },
+  textInputStyle: {
+    flexDirection: 'column',
+  },
+  textInputStyle_LAPTOP: {
+    flexDirection: 'row',
+  },
+  textInputOne: {
+    flex: 1,
+    padding: 10,
+  },
+  textInputTwo: {
+    flex: 1,
+    padding: 10,
+  },
+  addFacBTN: {
+    alignItems: 'center',
+    marginTop: 25,
+  },
+  addFacBTNStyle: {
+    width: '50%',
+    padding: 15,
+    alignItems: 'center',
+    borderRadius: 30,
+    backgroundColor: '#458757',
+  },
+  addFacBTNStyle_LAPTOP: {
+    width: '20%',
+  },
+  addFacText: {
+    fontSize: 16,
+    color: '#fff',
+    fontWeight: 'bold',
+  },
+  addFacHeadText: {
+    color: '#000',
+    fontSize: 18,
+    fontWeight: 'bold',
+  },
+  addFacImgStyle: {
+    width: 40,
+    height: 40,
+  },
+  addFacHead: {
+    width: '50%',
+    // alignItems: 'center',
+    paddingLeft: 10,
+  },
+  addFacHead_LAPTOP: {
+    width: '15%',
+  },
+  addNewFacImgText: {
+    marginTop: 10,
+  },
 })

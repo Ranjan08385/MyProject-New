@@ -70,6 +70,11 @@ class Facility extends Component {
     navigation.navigate('FacilityView', {value});
   }
 
+  onClickAddFacility = () => {
+    const { navigation } = this.props;
+    navigation.navigate('AddNewFacility');
+  }
+
   render() {
     const { facilityArray } = this.state;
     const { measure, navigation } = this.props;
@@ -153,7 +158,7 @@ class Facility extends Component {
             ))}
           </View>
           <View style={[Styles.addFacility, Styles[getResponsiveStyle('addFacility', styleWidth)]]}>
-            <TouchableOpacity style={Styles.addFacilityBtn}>
+            <TouchableOpacity style={Styles.addFacilityBtn} onPress={() => this.onClickAddFacility()}>
               <Image source={addFacility} style={Styles.addFacilityImg} />
             </TouchableOpacity>
           </View>

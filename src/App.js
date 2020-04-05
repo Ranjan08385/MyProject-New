@@ -16,6 +16,7 @@ import Provider from './pages/provider/provider';
 import ManageUser from './pages/manageUser/manageUser';
 import Conflicts from './pages/resolveConflicts/resolveConflicts';
 import FacilityView from './pages/facility/facilityView';
+import AddNewFacility from './pages/facility/addFacility';
 
 import RoutesGenerator from './utils/route_wrapper';
 import CacheBuster from './CacheBuster';
@@ -38,6 +39,10 @@ const routeMap = {
   FacilityView: {
     component: FacilityView,
     path: '/facility-view',
+  },
+  AddNewFacility: {
+    component: AddNewFacility,
+    path: '/add-facility',
   },
   Provider: {
     component: Provider,
