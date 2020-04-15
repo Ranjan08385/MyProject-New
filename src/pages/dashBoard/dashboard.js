@@ -14,6 +14,7 @@ import { VALIDATIONS } from '../displayConstants/constants';
 import { AppConsumer } from '../../AppContext';
 import { getResponsiveStyle } from '../../utils/appUtils';
 import Styles from './styles';
+import { getPrefData, USER_DATA } from '../../storage/preferenceStorage';
 
 const LoginImage = require('../images/header-logo.png');
 const dashboard = require('../images/dashboard.png');
@@ -24,6 +25,8 @@ const resolve = require('../images/pending.png');
 const edit = require('../images/edit.png');
 const logout = require('../images/account-logout-24.png');
 
+let userData;
+
 class DashBoard extends Component {
   static contextType = AppConsumer;
 
@@ -31,6 +34,7 @@ class DashBoard extends Component {
     super(props);
     const { navigation } = this.props;
     // navigation.navigate('Facility');
+    this.onLoadData();
     this.state = {
       menuArray: [
         {
@@ -62,8 +66,22 @@ class DashBoard extends Component {
           name: 'Resolve Conflicts',
         },
       ],
-      
+      userName: '',
     };
+  }
+
+  componentWillMount = () => {
+    this.onLoadData();
+  }
+
+  onLoadData = async() => {
+    userData = await getPrefData(USER_DATA);
+    console.log("User Data", userData);
+    // this.name = userData.firstName + " " + userData.lastName;
+    // console.log('userName component', this.name);
+    // this.setState({
+    //   userName: this.name,
+    // });
   }
 
   onClickOptions = name => {
@@ -81,10 +99,10 @@ class DashBoard extends Component {
   }
 
   render() {
-    const { menuArray, password, usernameError, passwordError } = this.state;
+    const { menuArray, userName, usernameError, passwordError } = this.state;
     const { measure } = this.props;
     const styleWidth = measure;
-    console.log('styleWidth', styleWidth);
+    console.log('userName render', userName);
     return (
       <View style={Styles.container}>
         {styleWidth === 'LAPTOP' ? (

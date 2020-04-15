@@ -8,7 +8,7 @@ import { validateUserName, validatePassword } from '../validation/validations';
 import { VALIDATIONS } from '../displayConstants/constants';
 import { AppConsumer } from '../../AppContext';
 import { getResponsiveStyle } from '../../utils/appUtils';
-// import GetLoginService from '../../network/loginApi';
+import GetLoginService from '../../network/request/loginApi/loginApi';
 
 const LoginImage = require('../images/login.png');
 const LoginLogo = require('../images/login-logo.png');
@@ -64,8 +64,7 @@ class LandingPage extends Component {
         username,
         password,
       };
-      navigation.navigate('Facility');
-      // makeAPICall(GetLoginService(data), res => this.onSuceessLogin(res), err => this.onErrorLogin(err));
+      makeAPICall(GetLoginService(data), res => this.onSuceessLogin(res), err => this.onErrorLogin(err));
     }
   };
 
@@ -81,7 +80,7 @@ class LandingPage extends Component {
         align: 'center',
         top: 'top',
       });
-      navigation.navigate('DashBoard');
+      navigation.navigate('Facility', {res});
     } else {
       ShowToast({
         showToast: true,

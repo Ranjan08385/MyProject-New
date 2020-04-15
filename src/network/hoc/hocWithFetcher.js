@@ -50,7 +50,8 @@ const hocWithFetcher = Component => {
           });
       makeAPICallz(request)
         .then(result => {
-          const jsonResponse = JSON.parse(result.data);
+          // const jsonResponse = JSON.parse(result.data);
+          const jsonResponse = JSON.parse(JSON.stringify(result.data));
           jsonResponse.tag = result.tag;
           // console.log('loading>', this.state.isLoading);
           if (receiveResponseFunc && loadingFunc) {

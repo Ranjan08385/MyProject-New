@@ -32,8 +32,8 @@ const makeAPICall = async request => {
 
   // const instance = axios.create({ baseURL: apiUrl });
   const instance = axios.create({
-    baseURL: `${apiUrl}`
-    // baseURL: 'https://m2istagingweb.icicibank.com/newm2iNetUS_NIVEUS_UAT/m2ipwa',
+    // baseURL: `${apiUrl}`
+    baseURL: 'http://localhost:5000/',
     // baseURL: 'http://35.239.61.42:7001/newm2iNetUS_NIVEUS/m2ipwa/',
     // baseURL: 'https://m2istagingweb.icicibank.com/newm2iNetUS_NIVEUS_DEV/m2ipwa',
   });

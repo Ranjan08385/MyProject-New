@@ -54,6 +54,7 @@ export const SOURCE_OF_FUND = 'Source of funds';
 export const MLNG_BENEID = 'mlng BeneId';
 export const NOTIFICATION_COUNT = 'notification count';
 export const SECRET_KEY_UPDATION = 'secret key update';
+export const USER_DATA = 'user data';
 
 export const storePrefData = async (key, value) => {
   try {

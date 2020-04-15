@@ -114,7 +114,7 @@ class FacilityView extends Component {
                 <CustomText style={Styles.separator}> : </CustomText>
               </View>
               <View style={Styles.partTwo}>
-                <CustomText style={Styles.partTwoText}>2nd cross, 9th main</CustomText>
+                <CustomText style={Styles.partTwoText}>{data.address}</CustomText>
               </View>
             </View>
             <View style={Styles.detailSec}>
@@ -123,7 +123,7 @@ class FacilityView extends Component {
                 <CustomText style={Styles.separator}> : </CustomText>
               </View>
               <View style={Styles.partTwo}>
-                <CustomText style={Styles.partTwoText}>Bangalore</CustomText>
+                <CustomText style={Styles.partTwoText}>{data.city}</CustomText>
               </View>
             </View>
             <View style={Styles.detailSec}>
@@ -132,7 +132,7 @@ class FacilityView extends Component {
                 <CustomText style={Styles.separator}> : </CustomText>
               </View>
               <View style={Styles.partTwo}>
-                <CustomText style={Styles.partTwoText}>Karnataka</CustomText>
+                <CustomText style={Styles.partTwoText}>{data.state}</CustomText>
               </View>
             </View>
             <View style={Styles.detailSec}>
@@ -141,7 +141,7 @@ class FacilityView extends Component {
                 <CustomText style={Styles.separator}> : </CustomText>
               </View>
               <View style={Styles.partTwo}>
-                <CustomText style={Styles.partTwoText}>560076</CustomText>
+                <CustomText style={Styles.partTwoText}>{data.zipcode}</CustomText>
               </View>
             </View>
             <View style={Styles.detailSec}>
@@ -150,7 +150,7 @@ class FacilityView extends Component {
                 <CustomText style={Styles.separator}> : </CustomText>
               </View>
               <View style={Styles.partTwo}>
-                <CustomText style={Styles.partTwoText}>ranjan@hospital.com</CustomText>
+                <CustomText style={Styles.partTwoText}>{data.email}</CustomText>
               </View>
             </View>
             <View style={Styles.detailSec}>
@@ -159,7 +159,7 @@ class FacilityView extends Component {
                 <CustomText style={Styles.separator}> : </CustomText>
               </View>
               <View style={Styles.partTwo}>
-                <CustomText style={Styles.partTwoText}>+91 9513109508</CustomText>
+                <CustomText style={Styles.partTwoText}>{data.mobile}</CustomText>
               </View>
             </View>
             <View style={Styles.detailSec}>
@@ -169,7 +169,7 @@ class FacilityView extends Component {
                 <CustomText style={Styles.separator}> : </CustomText>
               </View>
               <View style={Styles.partTwo}>
-                <CustomText style={Styles.partTwoText}>Clinic</CustomText>
+                <CustomText style={Styles.partTwoText}>{data.facilityDesc}</CustomText>
               </View>
             </View>
           </View>

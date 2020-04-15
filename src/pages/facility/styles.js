@@ -3,7 +3,7 @@ import { StyleSheet, Platform } from 'react-native';
 export default StyleSheet.create({
   mainPage: {
     width: '100%',
-    height: '100%',
+    height: '150%',
     backgroundColor: '#eef0ed',
     position: 'absolute',
   },
@@ -36,17 +36,17 @@ export default StyleSheet.create({
     fontWeight: 'bold',
   },
   cardView: {
-    flexDirection: 'column',
-    margin: '7%',
+    width: '100%',
+    padding: '5%',
   },
   cardView_LAPTOP: {
-    flexDirection: 'row',
-    marginLeft: '1%',
+    width: '33%',
+    padding: '2%',
   },
   facilityList: {
     backgroundColor: '#fff',
     width: '100%',
-    marginBottom: '5%',
+    // marginBottom: '5%',
     padding: 20,
     paddingTop: 0,
     paddingBottom: 5,
@@ -62,12 +62,13 @@ export default StyleSheet.create({
   },
   facilityList_LAPTOP: {
     backgroundColor: '#fff',
-    width: '28%',
+    width: '100%',
+    margin: '2%',
     // height: '25%',
-    marginTop: '0%',
-    marginLeft: '5%',
-    marginRight: '1%',
-    marginBottom: '5%',
+    // marginTop: '0%',
+    // marginLeft: '5%',
+    // marginRight: '1%',
+    // marginBottom: '5%',
     padding: 20,
     paddingTop: 0,
     paddingBottom: 5,
@@ -275,11 +276,10 @@ export default StyleSheet.create({
     fontSize: 16,
   },
   addFacility: {
-    position: 'absolute',
+    position: 'sticky',
     width: '100%',
     marginTop: 700,
     alignItems: 'flex-end',
-    // borderWidth: 1,
   },
   addFacility_LAPTOP: {
     position: 'absolute',
@@ -410,5 +410,11 @@ export default StyleSheet.create({
   },
   addNewFacImgText: {
     marginTop: 10,
+  },
+  flatlistStyle: {
+    margin: '5%',
+  },
+  flatlistStyle_LAPTOP: {
+    margin: '4%',
   },
 })

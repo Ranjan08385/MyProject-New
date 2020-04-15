@@ -29,6 +29,8 @@ import {
   validateUploadPhoto,
   validateFacilityType,
 } from '../validation/validations';
+// import makeAPICall from '../../network/api';
+import AddFacility from '../../network/request/facilityApi/addFacility';
 
 const organization = require('../images/prov-icon.png');
 let data = [];
@@ -49,7 +51,7 @@ class AddNewFacility extends Component {
       zipcode: '',
       email: '',
       mobile: '',
-      uploadPhoto: '',
+      uploadPhoto: null,
       facilityType: '',
       nameError: '',
       typeError: '',
@@ -96,8 +98,12 @@ class AddNewFacility extends Component {
     this.setState(validateMobile(value));
   };
 
-  onChangeUploadPhoto = value => {
-    this.setState(validateUploadPhoto(value));
+  onChangeUploadPhoto = event => {
+    // this.setState(validateUploadPhoto(value));
+    this.setState({
+      uploadPhoto: event.target.files[0]
+    });
+
   };
 
   onChangeFacilityType = value => {
@@ -151,7 +157,7 @@ class AddNewFacility extends Component {
     if (mobile === '') {
       mobileError = VALIDATIONS.MOBILE_BLANK;
     }
-    if (uploadPhoto === '') {
+    if (uploadPhoto === null) {
       uploadPhotoError = VALIDATIONS.UPLOAD_PHOTO_BLANK;
     }
     if (facilityType === '') {
@@ -189,6 +195,65 @@ class AddNewFacility extends Component {
 
   onSubmit = () => {
     const isValid = this.validate();
+    const { makeAPICall } = this.props;
+    const {
+      name,
+      type,
+      address,
+      state,
+      city,
+      zipcode,
+      email,
+      mobile,
+      uploadPhoto,
+      facilityType,
+    } = this.state;
+    if (isValid) {
+      const data = new FormData();
+      const dataValues = {
+        facilityName: name,
+        facilityType: type,
+        address,
+        state,
+        city,
+        zipcode,
+        email,
+        mobile,
+        facilityDesc: facilityType,
+      };
+      data.append('facilityData', JSON.stringify(dataValues));
+      data.append('facilityImage', uploadPhoto);
+      for (var pair of data.entries()) {
+        console.log(pair[0] + ', ' + pair[1]);
+      }
+      console.log('photo data', data.values());
+      makeAPICall(AddFacility(data), this.onSuccessAddFacility);
+    }
+  }
+
+  onSuccessAddFacility = response => {
+    console.log("photo data res", response);
+    const { navigation } = this.props;
+    const { ShowToast } = this.context;
+    if (response.status === 'success') {
+      ShowToast({
+        showToast: true,
+        message: `Facility Successfully Added`,
+        duration: 3000,
+        align: 'center',
+        top: 'top',
+      });
+      navigation.navigate('Facility')
+    } else {
+      ShowToast({
+        showToast: true,
+        message: `Facility not Added`,
+        duration: 3000,
+        align: 'center',
+        top: 'top',
+        errortype: 'error',
+      });
+    }
   }
 
 
@@ -308,12 +373,14 @@ class AddNewFacility extends Component {
               </View>
               <View style={[Styles.textInputStyle, Styles[getResponsiveStyle('textInputStyle', styleWidth)]]}>
                 <View style={Styles.textInputOne}>
-                  <TextInput
+                  {/* <TextInput
+                    type='file'
                     placeholder={"9. Upload Photo"}
                     value={uploadPhoto}
                     error={uploadPhotoError}
                     onChange={value => this.onChangeUploadPhoto(value)}
-                  />
+                  /> */}
+                  <input type='file' onChange={this.onChangeUploadPhoto} />
                 </View>
                 <View style={Styles.textInputTwo}>
                   <TextInput
