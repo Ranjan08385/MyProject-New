@@ -30,7 +30,7 @@
     "fs": "0.0.1-security",
     "git": "^0.1.5",
     "html2canvas": "^1.0.0-rc.5",
-    "jspdf": "^1.5.3",
+    "jspdf": "^2.3.1",
     "modal-enhanced-react-native-web": "0.2.0",
     "moment": "2.24.0",
     "prop-types": "15.7.2",
